@@ -279,10 +279,49 @@ button[type="reset"]:hover {
 
 /* Responsive */
 @media (max-width: 600px) {
+  /* Give the container some breathing room on the screen edges */
+  .container {
+    margin: 1rem; 
+  }
+  
+  /* Reduce form padding for small screens */
+  form {
+    padding: 1.5rem;
+  }
+
+  /* --- Mobile Header Fixes --- */
+  .form-header {
+    height: auto; /* Remove the fixed 250px height */
+    min-height: 200px; /* Ensure it doesn't get too small */
+    padding: 2rem 1rem; /* Add padding so content doesn't touch the edges */
+  }
+
+  .header-logo {
+    max-width: 60px; /* Scale logo down slightly */
+    margin-bottom: 0.8rem;
+  }
+
+  .header-content h1 {
+    font-size: 1.6rem; /* Scale down the main title */
+    margin-bottom: 0.8rem;
+  }
+
   .loading-status {
     flex-direction: column;
     gap: 0.5rem;
+    margin-bottom: 1rem;
   }
+
+  .loading-status p {
+    font-size: 0.85rem; /* Slightly smaller text */
+    padding: 0.4rem; /* Tighter padding */
+  }
+
+  .anticipate-text {
+    font-size: 1.2rem; /* Scale down the anticipate text */
+  }
+
+  /* --- Button Fixes --- */
   .form-actions {
     flex-direction: column;
   }
