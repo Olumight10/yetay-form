@@ -1,0 +1,289 @@
+:root {
+  --primary-blue: #0056b3;
+  --accent-gold: #d4af37;
+  --deep-blue: #003d82;
+  --text-dark: #1a1a1a;
+  --text-muted: #555;
+  --white: #ffffff;
+  --light-bg: #f8f9fa;
+  --border-color: #ddd;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- MAIN BODY BACKGROUND UPDATE --- */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  
+  /* Applying a fixed image background to the whole page */
+  /* Stacked background: deep blue gradient overlay, then the image */
+  background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 61, 130, 0.9)), url('MAK_7257.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps image fixed while scrolling */
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* The form container must remain on a clean surface to be readable */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: var(--white); /* Distinct white background for readability */
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2); /* Enhanced shadow for depth against image */
+  overflow: hidden; 
+}
+
+/* --- HEADER DESIGN --- */
+.form-header {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  /* Using the uploaded trophy image as background */
+  background-image: url('MAK_7177.jpg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+.header-logo {
+  max-width: 80px; /* Adjust if you want the logo bigger or smaller */
+  height: auto;
+  border-radius: 8px; /* Optional: gives the logo smooth corners if it's a square block */
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Deep blue gradient overlay to make text readable */
+  background: linear-gradient(to bottom, rgba(0, 61, 130, 0.85), rgba(0, 86, 179, 0.95));
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+}
+
+.header-content h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.loading-status {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.loading-status p {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.3); 
+}
+
+.pulse {
+  animation: pulse-animation 1.5s infinite;
+  color: #fff;
+}
+
+@keyframes pulse-animation {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.anticipate-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+}
+
+/* --- FORM STYLES --- */
+form {
+  padding: 2rem;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--light-bg);
+}
+
+.form-section h3 {
+  color: var(--deep-blue);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent-gold);
+  padding-left: 10px;
+}
+
+.participant-block {
+  background-color: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.participant-block h4 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.teacher-block {
+  background-color: #fff3cd; 
+  border-color: #ffeeba;
+}
+
+.inputer {
+  margin-bottom: 1.2rem;
+}
+
+.inputer label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.helper-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.required {
+  color: #dc3545;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+/* Checkbox specific styling */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: var(--light-bg);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.checkbox-label:hover {
+  background: #e9ecef;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Utility Class for Dynamic Sections */
+.hidden {
+  display: none !important;
+}
+
+/* --- BUTTONS --- */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  flex: 2;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--deep-blue);
+}
+
+button[type="reset"] {
+  background-color: #e9ecef;
+  color: var(--text-dark);
+  flex: 1;
+}
+
+button[type="reset"]:hover {
+  background-color: #dde0e3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .loading-status {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+}
