@@ -16,40 +16,35 @@
   padding: 0;
 }
 
-/* --- MAIN BODY BACKGROUND UPDATE --- */
 body {
   font-family: 'Open Sans', sans-serif;
   color: var(--text-dark);
   line-height: 1.6;
-  
-  /* Applying a fixed image background to the whole page */
-  /* Stacked background: deep blue gradient overlay, then the image */
   background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 61, 130, 0.9)), url('MAK_7257.jpg'); 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Keeps image fixed while scrolling */
+  background-attachment: fixed; 
 }
 
 h1, h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* The form container must remain on a clean surface to be readable */
 .container {
   max-width: 800px;
   margin: 2rem auto;
-  background: var(--white); /* Distinct white background for readability */
+  background: var(--white); 
   border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2); /* Enhanced shadow for depth against image */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2); 
   overflow: hidden; 
 }
 
-/* --- HEADER DESIGN --- */
 .form-header {
   position: relative;
   width: 100%;
-  height: 250px;
-  /* Using the uploaded trophy image as background */
+  /* CHANGED: Replaced fixed height with min-height and padding so it stretches to contain everything */
+  min-height: 320px; 
+  padding: 3rem 1.5rem; 
   background-image: url('MAK_7177.jpg'); 
   background-size: cover;
   background-position: center;
@@ -59,11 +54,6 @@ h1, h2, h3, h4 {
   text-align: center;
   color: var(--white);
 }
-.header-logo {
-  max-width: 80px; /* Adjust if you want the logo bigger or smaller */
-  height: auto;
-  border-radius: 8px; /* Optional: gives the logo smooth corners if it's a square block */
-}
 
 .header-overlay {
   position: absolute;
@@ -71,21 +61,27 @@ h1, h2, h3, h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Deep blue gradient overlay to make text readable */
   background: linear-gradient(to bottom, rgba(0, 61, 130, 0.85), rgba(0, 86, 179, 0.95));
 }
 
 .header-content {
   position: relative;
   z-index: 1;
-  padding: 1rem;
+  width: 100%;
+}
+
+.header-logo {
+  max-width: 90px; 
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px; 
 }
 
 .header-content h1 {
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--accent-gold);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -95,7 +91,7 @@ h1, h2, h3, h4 {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -123,17 +119,15 @@ h1, h2, h3, h4 {
   font-style: italic;
   color: var(--accent-gold);
   letter-spacing: 2px;
+  margin: 0;
 }
 
-/* --- FORM STYLES --- */
 form {
   padding: 2rem;
 }
 
 .form-section {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--light-bg);
+  margin-bottom: 1.5rem;
 }
 
 .form-section h3 {
@@ -141,25 +135,6 @@ form {
   margin-bottom: 1rem;
   border-left: 4px solid var(--accent-gold);
   padding-left: 10px;
-}
-
-.participant-block {
-  background-color: var(--light-bg);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--border-color);
-}
-
-.participant-block h4 {
-  color: var(--primary-blue);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.teacher-block {
-  background-color: #fff3cd; 
-  border-color: #ffeeba;
 }
 
 .inputer {
@@ -184,10 +159,7 @@ form {
 }
 
 input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-select {
+input[type="tel"] {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--border-color);
@@ -197,13 +169,13 @@ select {
   transition: var(--transition);
 }
 
-input:focus, select:focus {
+input[type="text"]:focus,
+input[type="tel"]:focus {
   outline: none;
   border-color: var(--primary-blue);
   box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
 }
 
-/* Checkbox specific styling */
 .checkbox-group {
   display: flex;
   flex-direction: column;
@@ -234,16 +206,12 @@ input:focus, select:focus {
   cursor: pointer;
 }
 
-/* Utility Class for Dynamic Sections */
-.hidden {
-  display: none !important;
-}
-
-/* --- BUTTONS --- */
 .form-actions {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+  border-top: 2px solid var(--light-bg);
+  padding-top: 1.5rem;
 }
 
 button {
@@ -279,49 +247,45 @@ button[type="reset"]:hover {
 
 /* Responsive */
 @media (max-width: 600px) {
-  /* Give the container some breathing room on the screen edges */
   .container {
     margin: 1rem; 
   }
   
-  /* Reduce form padding for small screens */
   form {
     padding: 1.5rem;
   }
 
-  /* --- Mobile Header Fixes --- */
   .form-header {
-    height: auto; /* Remove the fixed 250px height */
-    min-height: 200px; /* Ensure it doesn't get too small */
-    padding: 2rem 1rem; /* Add padding so content doesn't touch the edges */
+    /* Keep it stretching gracefully on mobile too */
+    min-height: 250px; 
+    padding: 2.5rem 1rem; 
   }
 
   .header-logo {
-    max-width: 60px; /* Scale logo down slightly */
+    max-width: 70px; 
     margin-bottom: 0.8rem;
   }
 
   .header-content h1 {
-    font-size: 1.6rem; /* Scale down the main title */
-    margin-bottom: 0.8rem;
+    font-size: 1.6rem; 
+    margin-bottom: 1rem;
   }
 
   .loading-status {
     flex-direction: column;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   .loading-status p {
-    font-size: 0.85rem; /* Slightly smaller text */
-    padding: 0.4rem; /* Tighter padding */
+    font-size: 0.85rem; 
+    padding: 0.4rem; 
   }
 
   .anticipate-text {
-    font-size: 1.2rem; /* Scale down the anticipate text */
+    font-size: 1.2rem; 
   }
 
-  /* --- Button Fixes --- */
   .form-actions {
     flex-direction: column;
   }

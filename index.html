@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yetay Bible Trivia 3.0 Registration</title>
+  <title>Yetay Bible Quiz 3.0 Registration</title>
   
   <link rel="icon" type="image/png" href="logo.png">
-  
   <link rel="stylesheet" href="index.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -17,10 +16,8 @@
     <header class="form-header">
       <div class="header-overlay"></div>
       <div class="header-content">
-        
-        <img src="logo.png" alt="Yetay Bible Trivia Logo" class="header-logo">
-        
-        <h1>YETAY BIBLE TRIVIA 3.0</h1>
+        <img src="logo.png" alt="Yetay Bible Quiz Logo" class="header-logo">
+        <h1>YETAY BIBLE Quiz 3.0</h1>
         <div class="loading-status">
           <p>Venue: <span class="pulse">Loading...</span></p>
           <p>Date: <span class="pulse">Loading...</span></p>
@@ -45,9 +42,14 @@
           <input type="text" name="churchAddress" id="churchAddress" placeholder="Full address of the church" required>
         </div>
 
-        <div class="inputer">
+        <div class="inputer">    
+          <label for="churchContact">Church Contact Number <span class="required">*</span></label>
+          <input type="tel" name="churchContact" id="churchContact" placeholder="Enter active phone number" required>
+        </div>
+
+        <div class="inputer" style="margin-bottom: 0;">
           <label>Select Competing Categories <span class="required">*</span></label>
-          <p class="helper-text">Check all the categories your church will be participating in. Additional fields will appear below.</p>
+          <p class="helper-text">Check all the categories your church will be participating in.</p>
           
           <div class="checkbox-group">
             <label class="checkbox-label">
@@ -63,114 +65,6 @@
               Senior Category (Ages 16-19)
             </label>
           </div>
-        </div>
-      </div>
-
-      <div id="juniorSection" class="form-section category-section hidden">
-        <h3>Junior Category Details</h3>
-        
-        <div class="participant-block">
-          <h4>Participant 1</h4>
-          <div class="inputer"><label>Name <span class="required">*</span></label><input type="text" name="juniorPart1Name" class="cat-input"></div>
-          <div class="inputer"><label>Gender <span class="required">*</span></label>
-            <select name="juniorPart1Gender" class="cat-input">
-              <option value="">Select Gender</option><option value="Male">Male</option><option value="Female">Female</option>
-            </select>
-          </div>
-          <div class="inputer"><label>Date of Birth <span class="required">*</span></label><input type="date" name="juniorPart1DOB" class="cat-input"></div>
-          <div class="inputer"><label>Parent Name(s) <span class="required">*</span></label><input type="text" name="juniorPart1ParentName" class="cat-input"></div>
-          <div class="inputer"><label>Parent Phone <span class="required">*</span></label><input type="tel" name="juniorPart1ParentPhone" class="cat-input"></div>
-        </div>
-
-        <div class="participant-block">
-          <h4>Participant 2</h4>
-          <div class="inputer"><label>Name <span class="required">*</span></label><input type="text" name="juniorPart2Name" class="cat-input"></div>
-          <div class="inputer"><label>Gender <span class="required">*</span></label>
-            <select name="juniorPart2Gender" class="cat-input">
-              <option value="">Select Gender</option><option value="Male">Male</option><option value="Female">Female</option>
-            </select>
-          </div>
-          <div class="inputer"><label>Date of Birth <span class="required">*</span></label><input type="date" name="juniorPart2DOB" class="cat-input"></div>
-          <div class="inputer"><label>Parent Name(s) <span class="required">*</span></label><input type="text" name="juniorPart2ParentName" class="cat-input"></div>
-          <div class="inputer"><label>Parent Phone <span class="required">*</span></label><input type="tel" name="juniorPart2ParentPhone" class="cat-input"></div>
-        </div>
-
-        <div class="participant-block teacher-block">
-          <h4>Category Teacher/Coach</h4>
-          <div class="inputer"><label>Teacher's Name <span class="required">*</span></label><input type="text" name="juniorTeacherName" class="cat-input"></div>
-          <div class="inputer"><label>Teacher's Phone <span class="required">*</span></label><input type="tel" name="juniorTeacherPhone" class="cat-input"></div>
-        </div>
-      </div>
-
-      <div id="intermediateSection" class="form-section category-section hidden">
-        <h3>Intermediate Category Details</h3>
-        
-        <div class="participant-block">
-          <h4>Participant 1</h4>
-          <div class="inputer"><label>Name <span class="required">*</span></label><input type="text" name="interPart1Name" class="cat-input"></div>
-          <div class="inputer"><label>Gender <span class="required">*</span></label>
-            <select name="interPart1Gender" class="cat-input">
-              <option value="">Select Gender</option><option value="Male">Male</option><option value="Female">Female</option>
-            </select>
-          </div>
-          <div class="inputer"><label>Date of Birth <span class="required">*</span></label><input type="date" name="interPart1DOB" class="cat-input"></div>
-          <div class="inputer"><label>Parent Name(s) <span class="required">*</span></label><input type="text" name="interPart1ParentName" class="cat-input"></div>
-          <div class="inputer"><label>Parent Phone <span class="required">*</span></label><input type="tel" name="interPart1ParentPhone" class="cat-input"></div>
-        </div>
-
-        <div class="participant-block">
-          <h4>Participant 2</h4>
-          <div class="inputer"><label>Name <span class="required">*</span></label><input type="text" name="interPart2Name" class="cat-input"></div>
-          <div class="inputer"><label>Gender <span class="required">*</span></label>
-            <select name="interPart2Gender" class="cat-input">
-              <option value="">Select Gender</option><option value="Male">Male</option><option value="Female">Female</option>
-            </select>
-          </div>
-          <div class="inputer"><label>Date of Birth <span class="required">*</span></label><input type="date" name="interPart2DOB" class="cat-input"></div>
-          <div class="inputer"><label>Parent Name(s) <span class="required">*</span></label><input type="text" name="interPart2ParentName" class="cat-input"></div>
-          <div class="inputer"><label>Parent Phone <span class="required">*</span></label><input type="tel" name="interPart2ParentPhone" class="cat-input"></div>
-        </div>
-
-        <div class="participant-block teacher-block">
-          <h4>Category Teacher/Coach</h4>
-          <div class="inputer"><label>Teacher's Name <span class="required">*</span></label><input type="text" name="interTeacherName" class="cat-input"></div>
-          <div class="inputer"><label>Teacher's Phone <span class="required">*</span></label><input type="tel" name="interTeacherPhone" class="cat-input"></div>
-        </div>
-      </div>
-
-      <div id="seniorSection" class="form-section category-section hidden">
-        <h3>Senior Category Details</h3>
-        
-        <div class="participant-block">
-          <h4>Participant 1</h4>
-          <div class="inputer"><label>Name <span class="required">*</span></label><input type="text" name="seniorPart1Name" class="cat-input"></div>
-          <div class="inputer"><label>Gender <span class="required">*</span></label>
-            <select name="seniorPart1Gender" class="cat-input">
-              <option value="">Select Gender</option><option value="Male">Male</option><option value="Female">Female</option>
-            </select>
-          </div>
-          <div class="inputer"><label>Date of Birth <span class="required">*</span></label><input type="date" name="seniorPart1DOB" class="cat-input"></div>
-          <div class="inputer"><label>Parent Name(s) <span class="required">*</span></label><input type="text" name="seniorPart1ParentName" class="cat-input"></div>
-          <div class="inputer"><label>Parent Phone <span class="required">*</span></label><input type="tel" name="seniorPart1ParentPhone" class="cat-input"></div>
-        </div>
-
-        <div class="participant-block">
-          <h4>Participant 2</h4>
-          <div class="inputer"><label>Name <span class="required">*</span></label><input type="text" name="seniorPart2Name" class="cat-input"></div>
-          <div class="inputer"><label>Gender <span class="required">*</span></label>
-            <select name="seniorPart2Gender" class="cat-input">
-              <option value="">Select Gender</option><option value="Male">Male</option><option value="Female">Female</option>
-            </select>
-          </div>
-          <div class="inputer"><label>Date of Birth <span class="required">*</span></label><input type="date" name="seniorPart2DOB" class="cat-input"></div>
-          <div class="inputer"><label>Parent Name(s) <span class="required">*</span></label><input type="text" name="seniorPart2ParentName" class="cat-input"></div>
-          <div class="inputer"><label>Parent Phone <span class="required">*</span></label><input type="tel" name="seniorPart2ParentPhone" class="cat-input"></div>
-        </div>
-
-        <div class="participant-block teacher-block">
-          <h4>Category Teacher/Coach</h4>
-          <div class="inputer"><label>Teacher's Name <span class="required">*</span></label><input type="text" name="seniorTeacherName" class="cat-input"></div>
-          <div class="inputer"><label>Teacher's Phone <span class="required">*</span></label><input type="tel" name="seniorTeacherPhone" class="cat-input"></div>
         </div>
       </div>
 
